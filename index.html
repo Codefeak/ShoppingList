@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css">
+    <title>DOM Assignemnt</title>
+  </head>
+  <body onload="addData()">
+    <div class="main-container">
+      <div class="heading">
+        <h2>Shopping List</h2>
+        <img src="shopping cart.png" alt="">
+      </div>
+
+      <header>
+        <div class="sub-heading">
+          <h1>Add Item Here</h1>
+        </div>
+        <form class="main-form" method="post">
+            <input type="text" id="in-item-name" name="item" value="" placeholder="Item Name">
+            <input type="text" id="in-item-qty" name="qty" value="" placeholder="Qty">
+            <p type="submit" id="add-button" >Add Item</p>
+        </form>
+      </header>
+      <section>
+        <div class="to-do-content">
+          <div class="sub-heading">
+            <h1>To Do Items</h1>
+          </div>
+          <div id="to-do-list-content">
+            <div class="to-do-list-heading" id="item-heading">
+              <p></p>
+              <h3 id="items-name">Item Names</h3>
+              <h3>Quantity</h3>
+              <p></p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <footer>
+        <div class="done-content" id="done-content">
+          <div class="sub-heading" >
+            <h1 onclick="toggleDone()">Done Items</h1>
+          </div>
+          <div id = "done-container">
+            <!-- <div class="done-list" id="item-con-001" >
+              <input type="checkbox" id ="item-001" name="" value="">
+              <label for="item-001">Eggs</label>
+              <p>15</p>
+            </div> -->
+          </div>
+
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
