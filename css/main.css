@@ -220,7 +220,7 @@ section .to-do-content{
   color:red;
 }
 
-.done-container{
+#done-container{
   height: 10vw;
   overflow-y: scroll;
 }
