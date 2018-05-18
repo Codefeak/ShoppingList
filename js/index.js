@@ -22,6 +22,7 @@ const doneLocation = document.getElementById('done-container');
 const itemsData = document.getElementById('to-do-list-content');
 document.forms[0].addEventListener('click', handleClick);
 
+
 const formDataDiv = () => {
   let listDiv = document.createElement('div');
   listDiv.className = "to-do-list";
@@ -45,7 +46,7 @@ const formDataDiv = () => {
   paraDiv1.addEventListener('click', handleClick);
   // paraDiv1.addEventListener('click', deleteItem);
   listDiv.appendChild(paraDiv1);
-
+  // labelDiv.contenteditable = 'true';
 }
 
 const addData = () => {
@@ -55,8 +56,10 @@ const addData = () => {
     currentElement.id = 'item-con-0'+i;
     currentElement.childNodes[0].id = "item-0"+i;
     currentElement.childNodes[1].innerHTML = items[i-1].name;
-    currentElement.childNodes[1].htmlFor = currentElement.childNodes[0].id;
+    currentElement.childNodes[1].contentEditable = 'true';
+    // currentElement.childNodes[1].htmlFor = currentElement.childNodes[0].id;
     currentElement.childNodes[2].innerHTML = items[i-1].qty;
+    currentElement.childNodes[2].contentEditable = 'true';
     currentElement.childNodes[1].id = currentElement.childNodes[0].id;
     currentElement.lastChild.id = currentElement.childNodes[0].id;
   }
@@ -82,8 +85,9 @@ const addNewData = (e) => {
     currentElement = itemsData.lastChild;
     currentElement.id = 'item-con-0'+Math.random();
     currentElement.childNodes[1].innerHTML = itemName;
-    currentElement.childNodes[1].id = currentElement.id;
+    currentElement.childNodes[1].contentEditable = 'true';
     currentElement.childNodes[2].innerHTML = itemQty;
+    currentElement.childNodes[2].contentEditable = 'true';
     currentElement.childNodes[2].id = currentElement.id;
     currentElement.childNodes[0].id = currentElement.id;
     currentElement.childNodes[3].id = currentElement.id;
@@ -98,9 +102,10 @@ const addNewData = (e) => {
     ;
 }
 
-const toggleDone = () => {
+const toggleDone = (e) => {
   const doneLocation = document.getElementById('done-container');
-  doneLocation.style.display === 'none' ? doneLocation.style.display ='block' : doneLocation.style.display ='none';
+  doneLocation.style.display === 'none' ? doneLocation.style.display ='block' :
+  doneLocation.style.display ='none';
 }
 
 const deleteItem = (event) => {
@@ -140,7 +145,7 @@ function handleClick(e){
   else if(e.target.className === 'delete') deleteItem(e);
   else if (e.target.innerText==="<ך") handleUndo(e);
   else if (e.target.tagName=== 'INPUT' && e.target.type==="checkbox") checkedItem(e);
-  // else if (e.target.tagName === )
+
 }
 
 function handleUndo(event) {
