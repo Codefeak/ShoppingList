@@ -49,7 +49,6 @@ const formDataDiv = () => {
 }
 
 const addData = () => {
-
   for(let i = 1; i < items.length+1; i++){
     formDataDiv();
     const currentElement = itemsData.childNodes[2+i];
